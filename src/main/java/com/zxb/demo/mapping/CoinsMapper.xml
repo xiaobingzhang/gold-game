@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.zxb.demo.dao.CoinsDao" >
+<mapper namespace="com.zxb.demo.dao.CoinsDao">
 
-  <resultMap id="BaseResultMap" type="com.zxb.demo.model.Coins" >
-    <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="user_id" property="userId" jdbcType="BIGINT" />
-    <result column="coins" property="coinNum" jdbcType="INTEGER" />
-  </resultMap>
+    <resultMap id="BaseResultMap" type="com.zxb.demo.model.Coins">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="user_id" property="userId" jdbcType="BIGINT"/>
+        <result column="coins" property="coinNum" jdbcType="INTEGER"/>
+    </resultMap>
 
-  <sql id="Base_Column_List" >
-    id, user_id, coins
-  </sql>
+    <sql id="Base_Column_List">
+        id, user_id, coins
+    </sql>
 
-  <select id="selectByUserId" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select 
-    <include refid="Base_Column_List" />
-    from coins
-    where user_id = #{userId,jdbcType=BIGINT}
-  </select>
+    <select id="selectByUserId" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from coins
+        where user_id = #{userId,jdbcType=BIGINT}
+    </select>
 
-  <delete id="deleteByUserId" parameterType="java.lang.Long" >
-    delete from coins
-    where id = #{userId,jdbcType=BIGINT}
-  </delete>
-
-
-  <insert id="insert" parameterType="com.zxb.demo.model.Coins" >
-    insert into coins ( user_id, coins)
-    values (#{userId,jdbcType=BIGINT}, #{coinNum,jdbcType=INTEGER})
-  </insert>
+    <delete id="deleteByUserId" parameterType="java.lang.Long">
+        delete from coins
+        where id = #{userId,jdbcType=BIGINT}
+    </delete>
 
 
-  <insert id="addRecord" parameterType="com.zxb.demo.model.Coins" >
-    insert into coins
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="userId != null" >
-        user_id,
-      </if>
-      <if test="coinNum != null" >
-        coins,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="userId != null" >
-        #{userId,jdbcType=BIGINT},
-      </if>
-      <if test="coinNum != null" >
-        #{coinNum,jdbcType=INTEGER},
-      </if>
-    </trim>
-  </insert>
+    <insert id="insert" parameterType="com.zxb.demo.model.Coins">
+        insert into coins ( user_id, coins)
+        values (#{userId,jdbcType=BIGINT}, #{coinNum,jdbcType=INTEGER})
+    </insert>
 
-  <update id="updteUserCoinNum" parameterType="com.zxb.demo.model.Coins" >
-    update coins
-    set coins = #{coinNum,jdbcType=INTEGER}
-    where user_id = #{userId,jdbcType=INTEGER}
-  </update>
+
+    <insert id="addRecord" parameterType="com.zxb.demo.model.Coins">
+        insert into coins
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="coinNum != null">
+                coins,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="coinNum != null">
+                #{coinNum,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updteUserCoinNum" parameterType="com.zxb.demo.model.Coins">
+        update coins
+        set coins = #{coinNum,jdbcType=INTEGER}
+        where user_id = #{userId,jdbcType=INTEGER}
+    </update>
 </mapper>

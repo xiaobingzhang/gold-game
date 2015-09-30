@@ -1,6 +1,7 @@
 package com.zxb.demo.model;
 
 import java.io.Serializable;
+
 /**
  * @author zxb
  * @version 1.0.0
@@ -9,9 +10,9 @@ import java.io.Serializable;
 
 public class Coins implements Serializable {
     private static final long serialVersionUID = 7779055775282460872L;
-    private  Long id;
+    private Long id;
     private Long userId;
-    private  Long coinNum;
+    private Long coinNum;
 
     public Long getId() {
         return id;
@@ -39,6 +40,6 @@ public class Coins implements Serializable {
 
     @Override
     public String toString() {
-        return "Id:"+this.id+", userId:" + this.userId + ",coinNum:"+this.coinNum;
+        return "Id:" + this.id + ", userId:" + this.userId + ",coinNum:" + this.coinNum;
     }
 }

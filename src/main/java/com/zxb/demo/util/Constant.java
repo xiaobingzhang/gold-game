@@ -1,7 +1,9 @@
 package com.zxb.demo.util;
 
 /**
- * Created by lym on 2015/9/30.
+ * @author zxb
+ * @version 1.0.0
+ * @since 2015-09-29
  */
 public class Constant {
     public static final Long FROM_USER_INVALID = 0L;

@@ -16,6 +16,7 @@ import javax.annotation.Resource;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
 /**
  * @author zxb
  * @version 1.0.0
@@ -41,7 +42,7 @@ public class CoinsControllerTest extends BaseTest {
     private CoinsService coinsService;
 
     @Test
-    public void  testqueryCoinsNumByUserId() throws Exception {
+    public void testqueryCoinsNumByUserId() throws Exception {
         mockMvc.perform(get("/coins/user/1000000"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))

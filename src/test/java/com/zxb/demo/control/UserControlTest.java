@@ -43,7 +43,7 @@ public class UserControlTest extends BaseTest {
     private CoinsService coinsService;
 
     @Test
-    public void  testAdd() throws Exception {
+    public void testAdd() throws Exception {
         mockMvc.perform(post("/user/add?user_id=1000000&coins=10"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))

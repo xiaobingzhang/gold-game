@@ -25,6 +25,7 @@ public class CoinsServiceImpl implements CoinsService {
 
     /**
      * 添加用户和金币
+     *
      * @param coins
      * @return
      */
@@ -41,6 +42,7 @@ public class CoinsServiceImpl implements CoinsService {
 
     /**
      * 给定用户ID, 返回当前金币金额,
+     *
      * @param userId
      * @return
      */
@@ -52,6 +54,7 @@ public class CoinsServiceImpl implements CoinsService {
 
     /**
      * 给定user_id1, user_id2, 金额500, 完成从user1 向user2 的账户转账500 金币
+     *
      * @param fromUserId
      * @param toUserId
      * @param coinsNum
@@ -60,7 +63,7 @@ public class CoinsServiceImpl implements CoinsService {
      */
     @Override
     @Transactional
-    public Long coinTransfer(Long fromUserId, Long toUserId, Long coinsNum) throws Exception{
+    public Long coinTransfer(Long fromUserId, Long toUserId, Long coinsNum) throws Exception {
         // chech both user;
         Coins fromCoins = coinsDao.selectByUserId(fromUserId);
         Coins toCoins = coinsDao.selectByUserId(toUserId);

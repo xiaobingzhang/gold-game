@@ -1,6 +1,7 @@
 package com.zxb.demo.model;
 
 import java.io.Serializable;
+
 /**
  * @author zxb
  * @version 1.0.0
@@ -8,7 +9,7 @@ import java.io.Serializable;
  */
 
 public class Message<T> implements Serializable {
-    private  boolean sucess;
+    private boolean sucess;
     private T object;
     private String errorMsg;
 

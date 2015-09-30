@@ -23,8 +23,8 @@ public class UserController {
     private CoinsService coinsService;
 
     /**
-     *
      * curl -X POST -d "user_id=1&coins=10" "http://localhost:8080/gold-game/user/add"
+     *
      * @param userId
      * @param coinsNum
      * @return

@@ -25,6 +25,7 @@ public class TransferController {
 
     /**
      * curl -X POST -d "from_user_id=1&to_user_id=2&coins=500" "http://localhost:8080/transaction/transfer"
+     *
      * @param fromUserId
      * @param toUserId
      * @param coinsNum
@@ -39,7 +40,7 @@ public class TransferController {
         try {
             ret = coinsService.coinTransfer(fromUserId, toUserId, coinsNum);
         } catch (Exception e) {
-            logger.error("TransferController -- coinsTransfer -- exception "+e.getMessage());
+            logger.error("TransferController -- coinsTransfer -- exception " + e.getMessage());
             result.setErrorMsg("some thing unexpect haddpened,transfer fail");
             result.setSucess(false);
             return result;

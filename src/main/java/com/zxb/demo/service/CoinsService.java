@@ -10,6 +10,8 @@ import com.zxb.demo.model.Coins;
 
 public interface CoinsService {
     public Long addUserRecord(Coins coins);
+
     public Coins getCoinsByUserId(Long userId);
-    public Long coinTransfer(Long fromUserId,Long toUserId,Long coinsNum) throws Exception;
+
+    public Long coinTransfer(Long fromUserId, Long toUserId, Long coinsNum) throws Exception;
 }
