@@ -29,6 +29,10 @@ curl -X GET http://localhost:8080/gold-game/coins/user/1
 ```
 curl -X POST -d "from_user_id=1&to_user_id=2&coins=500" "http://localhost:8080/transaction/transfer"
 ```
+- 查看当前Java进程的jstack
+```
+http://localhost:8080/gold-game/ops/jstack
+```
 ## 单测覆盖率
 
 运行 **mvn cobertura:cobertura** 即可
